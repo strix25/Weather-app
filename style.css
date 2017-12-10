@@ -5,7 +5,8 @@
   }
   body{
     text-align:center;
-    background:grey;
+    background:#686766;
+    color:#ffffff;
   }
   .container{
     display:block;
