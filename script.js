@@ -53,20 +53,6 @@ function potato(lat, long){
     };
     xhr.send(null);
 }
-
-
-
-// ​$("#tempunit").click(function () {
-//     var currentTempUnit = $("#tempunit").text();
-//     var newTempUnit = currentTempUnit == "C" ? "F" : "C";
-//     $("#tempunit").text(newTempUnit);
-//     if (newTempUnit == "F") {
-//       var fahTemp = Math.round(parseInt($("#temp").text()) * 9 / 5 + 32);
-//       $("#temp").text(fahTemp + " " + String.fromCharCode(176));
-//     } else {
-//       $("#temp").text(currentTempInCelsius + " " + String.fromCharCode(176));
-//     }
-//   });
   
 mes.onclick = function(){
     
