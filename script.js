@@ -2,6 +2,8 @@ const locationn = document.getElementById("location");
 const temp = document.getElementById("temp");
 const weather = document.getElementById("weather");
 const icon = document.getElementById("icon");
+const mes = document.getElementById("mes");
+var currentTempInCels;
 
 function geo_success(position) {
     console.log(position.coords.latitude, position.coords.longitude);
@@ -36,7 +38,8 @@ function potato(lat, long){
 
             locationn.innerHTML = data.name;
             let deg = data.main.temp *10;
-            temp.innerHTML = Math.round(deg)/10;
+            currentTempInCels = Math.round(deg)/10;
+            temp.innerHTML = currentTempInCels;
             weather.innerHTML = data.weather[0].main;
             icon.src = data.weather[0].icon;
 
@@ -65,3 +68,16 @@ function potato(lat, long){
 //     }
 //   });
   
+mes.onclick = function(){
+    
+    let currentTempUnit = mes.innerHTML;
+    let newTempUnit = currentTempUnit == "C" ? "F" : "C";
+    mes.innerHTML = newTempUnit;
+
+    if(newTempUnit == "F"){
+        let fahTemp = Math.round(parseInt(temp.innerHTML)*9 / 5 + 32);
+        temp.innerHTML = fahTemp;
+    }else{
+        temp.innerHTML = currentTempInCels;
+    }
+};
